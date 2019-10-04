@@ -13,4 +13,12 @@ namespace Тест_OpenTK
             Console.WriteLine(base.Message);
         }
     }
+
+    class GameObjectException : Exception
+    {
+        public GameObjectException()
+        {
+            Console.WriteLine(base.Message);
+        }
+    }
 }

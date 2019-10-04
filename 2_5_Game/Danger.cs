@@ -21,10 +21,16 @@ namespace Тест_OpenTK
 
         public Danger(PointGrath pos, Speed dir, PointGrath size, Screen screen)
         {
+
+            if (pos.X < 0 || pos.X > screen.Width || pos.Y < 0 || pos.Y > screen.Height ||
+                size.X < 0 || size.X > screen.Width / 2 || size.Y < 0 || size.Y > screen.Height / 2)
+                throw new GameObjectException();
+
             this.screen = screen;
             this.pos = pos;
             this.dir = dir;
             this.size = size;
+
             bit = (Bitmap)Image.FromFile("network.png");
             //bitByte = Elements.;
         }
