@@ -20,21 +20,27 @@ namespace Тест_OpenTK
             bit = (Bitmap)Image.FromFile("Earth.png");
         }
 
+        
+        /// <summary>
+        /// Построить объект
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public override bool Draw(Random r)
         {
-            GL.Color3(Color.Blue);
+            GL.Color3(Color.SkyBlue);
             GL.LineWidth(2);
             GL.Begin(PrimitiveType.TriangleFan);
 
-            for (var i = 0; i <= 50; i++)
+            for (var i = 0; i <= 30; i++)
             {
-                var a = (float)i / 50.0f * 3.1415f * 2.00f;
+                var a = (float)i / 30.0f * 3.1415f * 2.00f;
                 GL.Vertex2((pos.X + Math.Cos(a) * size.X), screen.Height - (pos.Y + Math.Sin(a) * size.X));
             }
             GL.End();
 
             GL.Color3(Color.Gray);
-            Print2D((float)pos.X - bit.Width / 2, (float)(screen.Height - (pos.Y - bit.Height / 2)));
+            Print2D((float)pos.X - bit.Width / 2 + 100 , (float)(screen.Height - (pos.Y - bit.Height / 2) - 100));
             return true;
         }
 

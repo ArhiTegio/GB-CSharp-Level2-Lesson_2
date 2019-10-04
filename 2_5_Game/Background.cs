@@ -21,11 +21,22 @@ namespace Тест_OpenTK
             this.dir = dir;
             this.size = size;
         }
+        
+        /// <summary>
+        /// Построить объект
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public virtual bool Draw(Random r)
         {
             return Update(r);
         }
-
+        
+        /// <summary>
+        /// Обновить параметры объекта
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public virtual bool Update(Random r)
         {
             return true;

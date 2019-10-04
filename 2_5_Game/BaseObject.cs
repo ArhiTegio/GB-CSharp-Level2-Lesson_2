@@ -26,11 +26,31 @@ namespace Тест_OpenTK
             this.dir = dir;
             this.size = size;
         }
+
+        /// <summary>
+        /// Построить объект
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public abstract bool Draw(Random r);
+
+        /// <summary>
+        /// Обновить параметры объекта
+        /// </summary>
+        /// <param name="r"></param>
+        /// <returns></returns>
         public abstract bool Update(Random r);
 
+        /// <summary>
+        /// Проверка на пересечение двух объектова
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
         public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
 
+        /// <summary>
+        /// Получить расположение и габариты объекта
+        /// </summary>
         public Rectangle Rect => new Rectangle((int)pos.X * 1000, (int)pos.Y * 1000, (int)size.X * 1000, (int)size.Y * 1000);
     }
 }

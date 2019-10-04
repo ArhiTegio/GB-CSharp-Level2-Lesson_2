@@ -126,9 +126,16 @@ namespace Тест_OpenTK
             return list.ToArray();
         }
 
-
+        /// <summary>
+        /// Проверка на пересечение двух объектова
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
         public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
 
+        /// <summary>
+        /// Получить расположение и габариты объекта
+        /// </summary>
         public Rectangle Rect => new Rectangle((int)pos.X * 1000, (int)pos.Y * 1000, (int)size.X * 1000, (int)size.Y * 1000);
     }
 }

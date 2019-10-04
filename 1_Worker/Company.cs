@@ -13,12 +13,20 @@ namespace _1_Worker
 
         public List<BaseWorker> List { get => list; set => list = value; }
 
+
+        /// <summary>
+        /// Перечислитель работников
+        /// </summary>
+        /// <returns></returns>
         public IEnumerator GetEnumerator()
         {
             foreach (var t in List)
                 yield return t;
         }
-
+        /// <summary>
+        /// Сортировка работников
+        /// </summary>
+        /// <returns></returns>
         public Company Sort()
         {
             list.Sort();
